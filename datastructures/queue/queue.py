@@ -16,7 +16,7 @@ class Queue:
         
     def dequeue(self):
         if self.empty():
-            raise QueueEmptyException()
+            raise QueueEmptyException('Queue is empty.')
         
         self.exchange_data_between_stacks()
                 
