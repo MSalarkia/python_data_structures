@@ -30,21 +30,3 @@ class Stack:
     
     def __repr__(self):
         return str(self._items)
-
-
-if __name__ == '__main__':
-    stack = Stack()
-
-    stack.push(10)
-    stack.push(20)
-    stack.push(30)
-
-    print(stack)
-
-    print(stack.pop())
-
-    print(stack.pop())
-    print(stack)
-
-    stack.pop()
-    stack.pop() # should raise EmptyStackException 
