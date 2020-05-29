@@ -6,9 +6,9 @@ class QueueEmptyException(Exception):
 
 
 class Queue:
-    '''
+    """
     this class implements a queue with 2 stacks
-    '''
+    """
 
     def __init__(self):
         self._enqueue_stack = Stack()

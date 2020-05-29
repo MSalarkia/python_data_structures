@@ -3,9 +3,9 @@ class EmptyStackException(Exception):
 
 
 class Stack:
-    '''
+    """
     this class implements stacks using a python list which is not ideals
-    '''
+    """
 
     def __init__(self):
         self._items = []
