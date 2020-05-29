@@ -46,3 +46,12 @@ if __name__ == "__main__":
     singly_linked_list.prepend(4)
     singly_linked_list.prepend(9)
     print(singly_linked_list)
+
+    singly_linked_list.insert_after(5, 10)
+    singly_linked_list.insert_after(4, 20)
+    print(singly_linked_list)
+
+    try:
+        singly_linked_list.insert_after(100, 200)
+    except Exception as e:
+        print(e)

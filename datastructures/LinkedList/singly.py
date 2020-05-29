@@ -1,6 +1,10 @@
 from .node import SingleNode
 
 
+class NodeNotExists(Exception):
+    pass
+
+
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
@@ -25,6 +29,19 @@ class SinglyLinkedList:
         else:
             node.next = self.head
             self.head = node
+
+    def insert_after(self, item, new_value):
+        current = self.head
+        node = SingleNode(new_value)
+
+        while current is not None:
+            if current.value == item:
+                node.next = current.next
+                current.next = node
+                break
+            current = current.next
+        else:
+            raise NodeNotExists(f'node with value={item} does not exist!')
 
     @property
     def empty(self):
