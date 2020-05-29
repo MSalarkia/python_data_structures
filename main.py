@@ -3,7 +3,7 @@ from datastructures.stack.stack import Stack
 from datastructures.LinkedList.singly import SinglyLinkedList
 
 if __name__ == "__main__":
-    # testing stack
+    print('***************** Testing Stack ***********************')
     stack = Stack()
     stack.push(10)
     stack.push(20)
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
 
-    # testing Queue
+    print('\n\n***************** Testing Queue ***********************')
     queue = Queue()
 
     queue.enqueue(10)
