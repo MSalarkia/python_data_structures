@@ -16,6 +16,16 @@ class SinglyLinkedList:
             self.tail.next = node
             self.tail = node
 
+    def prepend(self, item):
+        node = SingleNode(item)
+
+        if self.empty:
+            self.head = node
+            self.tail = node
+        else:
+            node.next = self.head
+            self.head = node
+
     @property
     def empty(self):
         return self.tail is None and self.head is None
@@ -28,6 +38,6 @@ class SinglyLinkedList:
             values.append(current.value)
             current = current.next
         return values
-    
+
     def __repr__(self):
         return f'SinglyLinkedList(values={str([x for x in self.items])})'

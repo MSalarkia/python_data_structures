@@ -40,6 +40,9 @@ if __name__ == "__main__":
     singly_linked_list = SinglyLinkedList()
     singly_linked_list.append(2)
     singly_linked_list.append(5)
-    print(singly_linked_list)
     singly_linked_list.append(8)
+    print(singly_linked_list)
+
+    singly_linked_list.prepend(4)
+    singly_linked_list.prepend(9)
     print(singly_linked_list)
