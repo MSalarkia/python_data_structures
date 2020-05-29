@@ -16,10 +16,10 @@ if __name__ == "__main__":
 
     stack.pop()
     try:
-        stack.pop() # should raise EmptyStackException 
+        stack.pop()  # should raise EmptyStackException
     except Exception as e:
         print(e)
-    
+
     # testing Queue
     queue = Queue()
 
