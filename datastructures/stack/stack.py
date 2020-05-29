@@ -14,15 +14,12 @@ class Stack:
         self._items.append(item)
 
     def pop(self):
-        if self.empty():
+        if self.empty:
             raise EmptyStackException('Stack is empty.')
         return self._items.pop()
 
-    def empty(self):
-        return len(self) == 0
-
     def peek(self):
-        if self.empty():
+        if self.empty:
             raise EmptyStackException('Stack is empty.')
 
         return self._items[-1]
@@ -32,3 +29,7 @@ class Stack:
 
     def __repr__(self):
         return str(self._items)
+
+    @property
+    def empty(self):
+        return len(self) == 0

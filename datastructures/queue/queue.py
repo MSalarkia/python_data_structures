@@ -26,11 +26,11 @@ class Queue:
         return self._dequeue_stack.pop()
 
     def empty(self):
-        return self._enqueue_stack.empty() and self._dequeue_stack.empty()
+        return self._enqueue_stack.empty and self._dequeue_stack.empty
 
     def exchange_data_between_stacks(self):
-        if self._dequeue_stack.empty():
-            while not self._enqueue_stack.empty():
+        if self._dequeue_stack.empty:
+            while not self._enqueue_stack.empty:
                 self._dequeue_stack.push(self._enqueue_stack.pop())
 
     def peek(self):
