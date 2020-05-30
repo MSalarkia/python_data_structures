@@ -4,3 +4,5 @@ from datastructures.LinkedList.singly import SinglyLinkedList
 
 if __name__ == "__main__":
     # You can test algorithms and data structures here
+    pass
+
