@@ -49,10 +49,16 @@ if __name__ == "__main__":
 
     singly_linked_list.insert_after(5, 10)
     singly_linked_list.insert_after(4, 20)
-    print(singly_linked_list)
-    print(f'count of singly linked list is {singly_linked_list.count}')
+    print(f'before deleting 10 {singly_linked_list}')
+    print(singly_linked_list.delete(10))
+    print(f'after deleting 10 {singly_linked_list}')
+    try:
+        print(singly_linked_list.delete(19))
+    except Exception as e:
+        print(e)
 
     try:
         singly_linked_list.insert_after(100, 200)
     except Exception as e:
         print(e)
+    print(f'count of singly linked list {singly_linked_list} is {singly_linked_list.count}')
