@@ -34,18 +34,20 @@ class SinglyLinkedList:
         self.count += 1
 
     def insert_after(self, item, new_value):
-        current = self.head
         node = SingleNode(new_value)
+        current = self._find_node(item)
+        node.next = current.next
+        current.next = node
+        self.count += 1
 
+    def _find_node(self, item):
+        current = self.head
         while current is not None:
             if current.value == item:
-                node.next = current.next
-                current.next = node
-                self.count += 1
-                break
+                return current
             current = current.next
-        else:
-            raise NodeNotExists(f'node with value={item} does not exist!')
+
+        raise NodeNotExists(f'node with value={item} does not exist!')
 
     @property
     def empty(self):
