@@ -40,6 +40,16 @@ class SinglyLinkedList:
         current.next = node
         self.count += 1
 
+    def _find_prev(self, item):
+        prev, current = None, self.head
+        while current is not None:
+            if current.value == item:
+                return prev
+
+            prev, current = current, current.next
+
+        raise NodeNotExists(f'node with value={item} does not exist!')
+
     def _find_node(self, item):
         current = self.head
         while current is not None:
