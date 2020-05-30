@@ -50,6 +50,7 @@ if __name__ == "__main__":
     singly_linked_list.insert_after(5, 10)
     singly_linked_list.insert_after(4, 20)
     print(singly_linked_list)
+    print(f'count of singly linked list is {singly_linked_list.count}')
 
     try:
         singly_linked_list.insert_after(100, 200)

@@ -9,6 +9,7 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+        self.count = 0
 
     def append(self, item):
         node = SingleNode(item)
@@ -19,6 +20,7 @@ class SinglyLinkedList:
         else:
             self.tail.next = node
             self.tail = node
+        self.count += 1
 
     def prepend(self, item):
         node = SingleNode(item)
@@ -29,6 +31,7 @@ class SinglyLinkedList:
         else:
             node.next = self.head
             self.head = node
+        self.count += 1
 
     def insert_after(self, item, new_value):
         current = self.head
@@ -38,6 +41,7 @@ class SinglyLinkedList:
             if current.value == item:
                 node.next = current.next
                 current.next = node
+                self.count += 1
                 break
             current = current.next
         else:
@@ -55,6 +59,14 @@ class SinglyLinkedList:
             values.append(current.value)
             current = current.next
         return values
+
+    @property
+    def count(self):
+        return self._count
+
+    @count.setter
+    def count(self, value):
+        self._count = value
 
     def __repr__(self):
         return f'SinglyLinkedList(values={str([x for x in self.items])})'
