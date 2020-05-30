@@ -7,3 +7,6 @@ Currently implemented datastructures are:
 - Queue
 - Stacks
   - using list
+ 
+# Tests
+`<addr>` pytest
