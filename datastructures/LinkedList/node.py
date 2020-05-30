@@ -24,4 +24,4 @@ class SingleNode:
 
     # Making it more beautiful
     def __repr__(self):
-        return f'SingleNode(value={self.value}'
+        return f'SingleNode(value={self.value})'
