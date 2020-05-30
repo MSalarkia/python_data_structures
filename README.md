@@ -9,4 +9,4 @@ Currently implemented datastructures are:
   - using list
  
 # Tests
-`<addr>` pytest
+`pytest`
