@@ -42,8 +42,12 @@ class SinglyLinkedList:
 
     def delete(self, item):
         prev = self._find_prev(item)
-        prev.next = prev.next.next
-        self.count -= 1
+        if prev is None:
+            self.head = None
+            self.tail = None
+        else:
+            prev.next = prev.next.next
+            self.count -= 1
         return item
 
     def _find_prev(self, item):
