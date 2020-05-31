@@ -31,7 +31,6 @@ class Queue:
     def empty(self):
         return self._enqueue_stack.empty and self._dequeue_stack.empty
 
-    @property
     def __len__(self):
         return self._count
 
