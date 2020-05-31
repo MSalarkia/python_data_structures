@@ -5,6 +5,10 @@ class NodeNotExists(Exception):
     pass
 
 
+class LinkedListEmptyError(Exception):
+    pass
+
+
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
@@ -47,7 +51,7 @@ class SinglyLinkedList:
             self.tail = None
         else:
             prev.next = prev.next.next
-            self.count -= 1
+        self.count -= 1
         return item
 
     def _find_prev(self, item):

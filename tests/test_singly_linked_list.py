@@ -7,6 +7,18 @@ def test_count():
     singly_linked_list = SinglyLinkedList()
     assert singly_linked_list.count == 0
 
+    singly_linked_list.append(1)
+    assert singly_linked_list.count == 1
+
+    singly_linked_list.prepend(2)
+    assert singly_linked_list.count == 2
+
+    singly_linked_list.insert_after(2, 3)
+    assert singly_linked_list.count == 3
+
+    singly_linked_list.delete(2)
+    assert singly_linked_list.count == 2
+
 
 def test_append():
     singly_linked_list = SinglyLinkedList()
