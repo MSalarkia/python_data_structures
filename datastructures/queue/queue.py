@@ -13,21 +13,27 @@ class Queue:
     def __init__(self):
         self._enqueue_stack = Stack()
         self._dequeue_stack = Stack()
+        self._count = 0
 
     def enqueue(self, item):
         self._enqueue_stack.push(item)
+        self._count += 1
 
     def dequeue(self):
         if self.empty:
             raise QueueEmptyException('Queue is empty.')
 
         self.exchange_data_between_stacks()
-
+        self._count -= 1
         return self._dequeue_stack.pop()
 
     @property
     def empty(self):
         return self._enqueue_stack.empty and self._dequeue_stack.empty
+
+    @property
+    def __len__(self):
+        return self._count
 
     def exchange_data_between_stacks(self):
         if self._dequeue_stack.empty:
