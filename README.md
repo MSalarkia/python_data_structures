@@ -7,6 +7,7 @@ Currently implemented datastructures are:
 - Queue
 - Stacks
   - using list
+- HashMap
  
 # Tests
 `pytest`
