@@ -40,6 +40,9 @@ class Queue:
                 self._dequeue_stack.push(self._enqueue_stack.pop())
 
     def peek(self):
+        if self.empty:
+            raise QueueEmptyException('Queue is empty.')
+
         self.exchange_data_between_stacks()
 
         return self._dequeue_stack.peek()
