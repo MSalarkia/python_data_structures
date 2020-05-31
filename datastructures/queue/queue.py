@@ -18,13 +18,14 @@ class Queue:
         self._enqueue_stack.push(item)
 
     def dequeue(self):
-        if self.empty():
+        if self.empty:
             raise QueueEmptyException('Queue is empty.')
 
         self.exchange_data_between_stacks()
 
         return self._dequeue_stack.pop()
 
+    @property
     def empty(self):
         return self._enqueue_stack.empty and self._dequeue_stack.empty
 
