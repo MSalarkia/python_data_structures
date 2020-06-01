@@ -30,12 +30,11 @@ class DoublyLinkedList:
             self._count = 1
             return
 
-        self._count += 1
         head = self.head
         head.prev = node
         node.next = head
         self.head = node
-        # node.next, self.head = self.head, node
+        self._count += 1
 
     def get_node(self, item):
         current = self.head
@@ -58,8 +57,31 @@ class DoublyLinkedList:
         current.next = node
         if next_node is not None:
             next_node.prev = node
-        # node.next, node.prev, current.next, current.next.prev = current.next, current, node, node
         self._count += 1
+
+    def delete(self, item):
+        current = self.get_node(item)
+
+        next_node = current.next
+        prev_node = current.prev
+
+        if prev_node is None and next_node is None:
+            self.head = None
+            self.tail = None
+            return
+
+        if next_node is None:
+            prev_node.next = None
+            self.tail = prev_node
+        else:
+            next_node.prev = prev_node
+
+        if prev_node is None:
+            next_node.prev = None
+            self.head = next_node
+        else:
+            prev_node.next = next_node
+        self._count -= 1
 
     @property
     def count(self):
