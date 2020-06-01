@@ -1,12 +1,5 @@
 from .node import SingleNode
-
-
-class NodeNotExists(Exception):
-    pass
-
-
-class LinkedListEmptyError(Exception):
-    pass
+from .exceptions import NodeNotExists
 
 
 class SinglyLinkedList:

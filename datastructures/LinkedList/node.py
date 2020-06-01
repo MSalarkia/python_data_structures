@@ -25,3 +25,13 @@ class SingleNode:
     # Making it more beautiful
     def __repr__(self):
         return f'SingleNode(value={self.value})'
+
+
+class DoubleNode:
+    def __init__(self, value):
+        self.value = value
+        self.prev = None
+        self.next = None
+
+    def __repr__(self):
+        return f'DoubleNone(value={self.value})'
