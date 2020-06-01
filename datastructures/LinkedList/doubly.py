@@ -2,6 +2,9 @@ from .node import DoubleNode
 from .exceptions import NodeNotExists, LinkedListEmptyError
 
 
+# TODO: Deleting Node Test
+# TODO: insert_before
+# TODO: Inserrt before test
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
