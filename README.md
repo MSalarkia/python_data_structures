@@ -1,4 +1,4 @@
-# python_data_structures
+# _Python Data Structures & Algorithms_
 Implementation of Various Data Structures and Algorithms in Python
 
 Currently implemented datastructures are:
