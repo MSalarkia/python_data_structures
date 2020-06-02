@@ -32,6 +32,7 @@ if __name__ == "__main__":
 
     print(tree.breadth_first_items)
 
-    print(tree.maximum)
+    print('max', tree.maximum)
+    print('min', tree.minimum)
 
     print(tree.depth)

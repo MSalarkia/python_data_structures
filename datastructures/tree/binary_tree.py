@@ -50,6 +50,18 @@ class BinarySearchTree:
         return calculate_depth(self.root)
 
     @property
+    def minimum(self):
+        minimum = self.root.value if self.root else None
+        current = self.root.left
+
+        while current is not None:
+            if current.value < minimum:
+                minimum = current.value
+            current = current.left
+
+        return minimum
+
+    @property
     def maximum(self):
         maximum = self.root.value if self.root else None
         current = self.root.right
