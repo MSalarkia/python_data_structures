@@ -2,9 +2,6 @@ from .node import DoubleNode
 from .exceptions import NodeNotExists, LinkedListEmptyError
 
 
-# TODO: Deleting Node Test
-# TODO: insert_before
-# TODO: Inserrt before test
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
@@ -48,26 +45,37 @@ class DoublyLinkedList:
 
         raise NodeNotExists(f'node with value {item} does not exist.')
 
-    def insert_after(self, query, item):
-        if self.empty:
-            raise LinkedListEmptyError('DoublyLinkedList is empty.')
-        node = DoubleNode(item)
-        current = self.get_node(query)
+    def get_prev(self, item):
+        next_node = self.get_node(item)
+        return next_node.prev
 
+    def insert_after(self, query, item):
+        current = self.get_node(query)
         next_node = current.next
-        node.next = next_node
-        node.prev = current
-        current.next = node
-        if next_node is not None:
-            next_node.prev = node
-        self._count += 1
+
+        if next_node is None:
+            self.append(item)
+        else:
+            node = DoubleNode(item)
+            self._insert_between(node, current, next_node)
+            self._count += 1
+
+    def insert_before(self, query, item):
+        current = self.get_node(query)
+        prev_node = current.prev
+        if prev_node is None:
+            self.prepend(item)
+        else:
+            node = DoubleNode(item)
+            self._insert_between(node, prev_node, current)
+            self._count += 1
 
     def delete(self, item):
         current = self.get_node(item)
 
+        self._count -= 1
         next_node = current.next
         prev_node = current.prev
-
         if prev_node is None and next_node is None:
             self.head = None
             self.tail = None
@@ -84,7 +92,9 @@ class DoublyLinkedList:
             self.head = next_node
         else:
             prev_node.next = next_node
-        self._count -= 1
+
+    def _insert_between(self, node, first_node, second_node):
+        first_node.next, node.prev, second_node.prev, node.next = node, first_node, node, second_node
 
     @property
     def count(self):
