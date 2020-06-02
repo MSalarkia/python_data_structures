@@ -15,7 +15,10 @@ if __name__ == "__main__":
     tree.insert(4)
     tree.insert(1)
     tree.insert(9)
+    tree.insert(12)
     tree.insert(7)
+    tree.insert(6)
+    tree.insert(2.5)
 
     print(tree)
 
@@ -24,3 +27,7 @@ if __name__ == "__main__":
     print(7, tree.find(7))
     print(14, tree.find(14))
     print(6, tree.find(6))
+
+    print(tree.items)
+
+    print(tree.breadth_first_items)

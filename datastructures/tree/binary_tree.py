@@ -37,7 +37,43 @@ class BinarySearchTree:
                 current = current.left
         return False
 
+    @property
+    def breadth_first_items(self):
+        output = []
+        current = self.root
+        to_be_traversed = [current]
 
+        def traverse(node):
+            if node is None:
+                return
+
+            while len(to_be_traversed) != 0:
+                node = to_be_traversed.pop()
+                output.append(node.value)
+
+                if node.left is not None:
+                    to_be_traversed.insert(0, node.left)
+                if node.right is not None:
+                    to_be_traversed.insert(0, node.right)
+
+        traverse(current)
+        return output
+
+    @property
+    def items(self):
+        output = []
+        current = self.root
+
+        def traverse(node):
+            if node is None:
+                return
+
+            traverse(node.left)
+            output.append(node.value)
+            traverse(node.right)
+
+        traverse(current)
+        return output
 
     @property
     def empty(self):
