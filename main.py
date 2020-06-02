@@ -3,11 +3,11 @@ from datastructures.stack.stack import Stack
 from datastructures.LinkedList.singly import SinglyLinkedList
 from datastructures.LinkedList.doubly import DoublyLinkedList
 from datastructures.hashtables.map import Map
-from datastructures.tree.binary_tree import BinaryTree
+from datastructures.tree.binary_tree import BinarySearchTree
 
 if __name__ == "__main__":
     # You can test algorithms and data structures here
-    tree = BinaryTree()
+    tree = BinarySearchTree()
     tree.insert(3)
     tree.insert(5)
     tree.insert(2)
