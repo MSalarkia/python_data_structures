@@ -31,3 +31,7 @@ if __name__ == "__main__":
     print(tree.items)
 
     print(tree.breadth_first_items)
+
+    print(tree.maximum)
+
+    print(tree.depth)

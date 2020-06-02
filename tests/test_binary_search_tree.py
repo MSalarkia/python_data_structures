@@ -4,6 +4,11 @@ from datastructures.tree.binary_tree import BinarySearchTree
 
 def initialize_tree():
     tree = BinarySearchTree()
+    #           4
+    #         /   \
+    #        2     7
+    #       / \   / \
+    #      1  3  6   8
     tree.insert(4)
     tree.insert(7)
     tree.insert(2)
@@ -34,3 +39,11 @@ def test_breadth_first_search():
     tree = initialize_tree()
 
     assert tree.breadth_first_items == [4, 2, 7, 1, 3, 6, 8]
+
+
+def test_depth():
+    tree = initialize_tree()
+    assert tree.depth == 3
+
+    tree.insert(10)
+    assert tree.depth == 4

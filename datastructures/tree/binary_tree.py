@@ -38,6 +38,30 @@ class BinarySearchTree:
         return False
 
     @property
+    def depth(self):
+        def calculate_depth(node):
+            if node is None:
+                return 0
+
+            if node.left is None and node.right is None:
+                return 1
+
+            return 1 + max(calculate_depth(node.right), calculate_depth(node.left))
+        return calculate_depth(self.root)
+
+    @property
+    def maximum(self):
+        maximum = self.root.value if self.root else None
+        current = self.root.right
+
+        while current is not None:
+            if current.value > maximum:
+                maximum = current.value
+            current = current.right
+
+        return maximum
+
+    @property
     def breadth_first_items(self):
         output = []
         current = self.root
