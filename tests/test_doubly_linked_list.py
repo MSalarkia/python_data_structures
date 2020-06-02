@@ -1,6 +1,6 @@
 import pytest
 from datastructures.LinkedList.doubly import DoublyLinkedList
-from datastructures.LinkedList.exceptions import LinkedListEmptyError
+from datastructures.LinkedList.exceptions import LinkedListEmptyError, NodeNotExists
 
 
 def test_append():
@@ -57,3 +57,26 @@ def test_count():
     doubly.append(0)
     assert doubly.count == 1
 
+
+def test_delete():
+    doubly = DoublyLinkedList()
+
+    with pytest.raises(NodeNotExists):
+        doubly.delete(1)
+
+    doubly.append(1)
+    doubly.append(2)
+    doubly.append(3)
+    doubly.append(4)
+
+    doubly.delete(2)
+    assert doubly.items == [1, 3, 4]
+
+    doubly.delete(1)
+    assert doubly.items == [3, 4]
+
+    doubly.delete(4)
+    assert doubly.items == [3]
+
+    doubly.delete(3)
+    assert doubly.items == []
