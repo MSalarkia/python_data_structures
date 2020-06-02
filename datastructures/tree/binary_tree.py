@@ -1,4 +1,5 @@
 from .node import Node
+import math
 
 
 class BinarySearchTree:
@@ -38,6 +39,24 @@ class BinarySearchTree:
         return False
 
     @property
+    def is_valid(self):
+        def calc_is_valid(node, min_range, max_range):
+            if node is None:
+                return True
+
+            if min_range <= node.value <= max_range:
+                left_min = min_range
+                left_max = node.value
+                right_min = node.value
+                right_max = max_range
+                return calc_is_valid(node.left, left_min, left_max) and calc_is_valid(node.right, right_min, right_max)
+
+            return False
+
+        current = self.root
+        return calc_is_valid(current, -math.inf, math.inf)
+
+    @property
     def depth(self):
         def calculate_depth(node):
             if node is None:
@@ -47,6 +66,7 @@ class BinarySearchTree:
                 return 1
 
             return 1 + max(calculate_depth(node.right), calculate_depth(node.left))
+
         return calculate_depth(self.root)
 
     @property

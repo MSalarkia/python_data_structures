@@ -4,6 +4,7 @@ from datastructures.LinkedList.singly import SinglyLinkedList
 from datastructures.LinkedList.doubly import DoublyLinkedList
 from datastructures.hashtables.map import Map
 from datastructures.tree.binary_tree import BinarySearchTree
+from datastructures.tree.node import Node
 
 if __name__ == "__main__":
     # You can test algorithms and data structures here
@@ -36,3 +37,6 @@ if __name__ == "__main__":
     print('min', tree.minimum)
 
     print(tree.depth)
+
+    print('is valid', tree.is_valid)
+

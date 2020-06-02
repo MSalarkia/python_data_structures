@@ -1,5 +1,6 @@
 import pytest
 from datastructures.tree.binary_tree import BinarySearchTree
+from datastructures.tree.node import Node
 
 
 def initialize_tree():
@@ -47,3 +48,25 @@ def test_depth():
 
     tree.insert(10)
     assert tree.depth == 4
+
+
+def test_is_valid():
+    tree = initialize_tree()
+    assert tree.is_valid is True
+
+    tree2 = BinarySearchTree()
+    n1 = Node(4)
+    n2 = Node(6)
+    n1.right = n2
+
+    n3 = Node(5)
+    n2.left = n3
+
+    n4 = Node(2)
+    n1.left = n4
+
+    n5 = Node(8)
+    n4.right = n5
+
+    tree2.root = n1
+    assert tree2.is_valid is False
