@@ -9,6 +9,7 @@ Currently implemented datastructures are:
 - Stacks
   - using list
 - HashMap
- 
+- Tree
+  - Binary Search Tree
 # Tests
 `pytest`
