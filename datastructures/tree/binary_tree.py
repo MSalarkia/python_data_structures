@@ -38,6 +38,26 @@ class BinarySearchTree:
                 current = current.left
         return False
 
+    def __eq__(self, other):
+        if not isinstance(other, BinarySearchTree):
+            return False
+
+        def is_sub_tree_equal(self_node, other_node):
+            if self_node is None and other_node is None:
+                return True
+
+            if self_node is None or other_node is None:
+                return False
+
+            return self_node.value == other_node.value and \
+                   is_sub_tree_equal(self_node.left, other_node.left) and \
+                   is_sub_tree_equal(self_node.right, other_node.right)
+
+        return is_sub_tree_equal(self.root, other.root)
+
+    def __ne__(self, other):
+        return not (self == other)
+
     @property
     def is_valid(self):
         def calc_is_valid(node, min_range, max_range):

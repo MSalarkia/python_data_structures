@@ -1,4 +1,3 @@
-import pytest
 from datastructures.tree.binary_tree import BinarySearchTree
 from datastructures.tree.node import Node
 
@@ -70,3 +69,13 @@ def test_is_valid():
 
     tree2.root = n1
     assert tree2.is_valid is False
+
+
+def test_is_equal():
+    tree1 = initialize_tree()
+    tree2 = initialize_tree()
+
+    assert tree1 == tree2
+
+    tree2.root.right.left.value = 5
+    assert tree1 != tree2
