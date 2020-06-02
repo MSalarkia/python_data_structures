@@ -24,6 +24,21 @@ class BinarySearchTree:
                 if current is None:
                     top.left = node
 
+    def kth_from_root(self, k):
+        output = []
+
+        def extract_nodes(node, level):
+            if node is None:
+                return
+            if level == k:
+                return output.append(node.value)
+
+            extract_nodes(node.left, level + 1)
+            extract_nodes(node.right, level + 1)
+
+        extract_nodes(self.root, 0)
+        return  output
+
     def find(self, item) -> bool:
         """
             must return boolean

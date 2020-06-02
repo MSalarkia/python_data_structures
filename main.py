@@ -19,7 +19,11 @@ if __name__ == "__main__":
     tree.insert(12)
     tree.insert(7)
     tree.insert(6)
+    tree.insert(6.5)
+    tree.insert(5.5)
     tree.insert(2.5)
+    tree.insert(2.75)
+
 
     print(tree)
 
@@ -40,3 +44,4 @@ if __name__ == "__main__":
 
     print('is valid', tree.is_valid)
 
+    print('kth from root', tree.kth_from_root(0))

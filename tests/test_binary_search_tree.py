@@ -79,3 +79,13 @@ def test_is_equal():
 
     tree2.root.right.left.value = 5
     assert tree1 != tree2
+
+
+def test_kth_from_root():
+    tree = initialize_tree()
+
+    assert tree.kth_from_root(k=0) == [4]
+
+    assert tree.kth_from_root(k=1) == [2, 7]
+
+    assert tree.kth_from_root(k=2) == [1, 3, 6, 8]
