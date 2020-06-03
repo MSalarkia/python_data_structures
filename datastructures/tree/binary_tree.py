@@ -37,7 +37,7 @@ class BinarySearchTree:
             extract_nodes(node.right, level + 1)
 
         extract_nodes(self.root, 0)
-        return  output
+        return output
 
     def find(self, item) -> bool:
         """
@@ -90,6 +90,18 @@ class BinarySearchTree:
 
         current = self.root
         return calc_is_valid(current, -math.inf, math.inf)
+
+    def height(self, n):
+        def calculate_height(node):
+            if node is None:
+                return -1
+
+            if node.left is None and node.right is None:
+                return 0
+
+            return 1 + max(calculate_height(node.right), calculate_height(node.left))
+
+        return calculate_height(n)
 
     @property
     def depth(self):
