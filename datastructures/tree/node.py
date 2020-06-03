@@ -12,7 +12,7 @@ class AVLNode:
     def __init__(self, value):
         self.right = None
         self.left = None
-        self.height = 0
+        self.height = -1
         self.value = value
 
     def __repr__(self):
