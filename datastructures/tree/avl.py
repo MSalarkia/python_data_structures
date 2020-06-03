@@ -1,4 +1,4 @@
-from .node import Node
+from .node import AVLNode
 
 
 class AVLTree:
@@ -7,13 +7,14 @@ class AVLTree:
 
     def _insert_recursive(self, node, item):
         if node is None:
-            return Node(item)
+            return AVLNode(item)
         if item > node.value:
             node.right = self._insert_recursive(node.right, item)
 
         if item < node.value:
             node.left = self._insert_recursive(node.left, item)
 
+        node.height = self.height(node)
         return node
 
     def insert(self, item):
