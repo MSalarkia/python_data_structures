@@ -11,5 +11,6 @@ Currently implemented datastructures are:
 - HashMap
 - Tree
   - Binary Search Tree
+  - AVL Tree
 # Tests
 `pytest`
