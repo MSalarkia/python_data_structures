@@ -2,6 +2,9 @@ import math
 
 
 class Heap:
+    """
+    using list as the underlying data structure for building a Heap
+    """
     def __init__(self):
         self.items = []
 
