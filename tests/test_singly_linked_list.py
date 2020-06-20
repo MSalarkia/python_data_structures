@@ -1,5 +1,5 @@
-from datastructures.LinkedList.singly import SinglyLinkedList
-from datastructures.LinkedList.exceptions import NodeNotExists
+from datastructures.linkedlist import SinglyLinkedList
+from datastructures.linkedlist import NodeNotExists
 import pytest
 
 

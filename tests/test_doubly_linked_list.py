@@ -1,6 +1,6 @@
 import pytest
-from datastructures.LinkedList.doubly import DoublyLinkedList
-from datastructures.LinkedList.exceptions import LinkedListEmptyError, NodeNotExists
+from datastructures.linkedlist import DoublyLinkedList
+from datastructures.linkedlist import NodeNotExists
 
 
 def test_append():

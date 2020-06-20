@@ -1,4 +1,4 @@
-from datastructures.queue.queue import Queue, QueueEmptyException
+from datastructures.queue import Queue, QueueEmptyException
 import pytest
 
 

@@ -1,4 +1,4 @@
-from datastructures.heap.heap import Heap
+from datastructures.heap import Heap
 
 
 def test_insert():

@@ -1,5 +1,5 @@
-from datastructures.tree.binary_tree import BinarySearchTree
-from datastructures.tree.node import Node
+from datastructures.tree import BinarySearchTree
+from datastructures.tree import Node
 
 
 def initialize_tree():

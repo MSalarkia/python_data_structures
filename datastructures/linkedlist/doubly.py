@@ -1,5 +1,5 @@
 from .node import DoubleNode
-from .exceptions import NodeNotExists, LinkedListEmptyError
+from .exceptions import NodeNotExists
 
 
 class DoublyLinkedList:

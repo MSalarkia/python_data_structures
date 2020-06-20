@@ -1,4 +1,4 @@
-from datastructures.hashtables.map import Map
+from datastructures.hashtables import Map
 import pytest
 
 
