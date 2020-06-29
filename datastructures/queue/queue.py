@@ -1,5 +1,7 @@
 from ..stack.stack import Stack
 
+__all__ = ['QueueEmptyException', 'Queue']
+
 
 class QueueEmptyException(Exception):
     pass

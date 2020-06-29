@@ -1,5 +1,7 @@
 from .node import AVLNode
 
+__all__ = ['AVLTree']
+
 
 class AVLTree:
     def __init__(self):

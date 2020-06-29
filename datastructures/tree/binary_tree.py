@@ -1,6 +1,8 @@
 from .node import Node
 import math
 
+__all__ = ['BinarySearchTree']
+
 
 class BinarySearchTree:
     def __init__(self):

@@ -1,5 +1,7 @@
 from .entry import Entry
 
+__all__ = ['Map']
+
 
 class Map:
     def __init__(self):

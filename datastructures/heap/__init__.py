@@ -1,3 +1,3 @@
 from .heap import *
 
-__all__ = ['Heap']
+__all__ = heap.__all__

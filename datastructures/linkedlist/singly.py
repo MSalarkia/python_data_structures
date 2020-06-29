@@ -1,6 +1,8 @@
 from .node import SingleNode
 from .exceptions import NodeNotExists
 
+__all__ = ['SinglyLinkedList']
+
 
 class SinglyLinkedList:
     def __init__(self):

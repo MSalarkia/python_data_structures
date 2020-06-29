@@ -1,3 +1,3 @@
 from .stack import *
 
-__all__ = ['Stack', 'EmptyStackException']
+__all__ = stack.__all__

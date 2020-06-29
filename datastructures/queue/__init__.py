@@ -1,3 +1,3 @@
 from .queue import *
 
-__all__ = ['QueueEmptyException', 'Queue']
+__all__ = queue.__all__

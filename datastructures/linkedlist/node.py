@@ -1,3 +1,6 @@
+__all__ = ['SingleNode', 'DoubleNode']
+
+
 class SingleNode:
     def __init__(self, value):
         self.value = value
